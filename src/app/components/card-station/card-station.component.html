@@ -1,0 +1,30 @@
+<ion-card class="ion-padding" *ngFor="let station of stations">
+  <ion-item lines="none">
+    {{station.istasyon_no}} - {{station.adi}}
+    <ion-badge slot="end" [color]="station.aktif ? 'success' : 'danger'">{{station.aktif ? constants.active : constants.closed}}</ion-badge>
+  </ion-item>
+
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <h5>{{constants.availablePark}}</h5>
+    </ion-col>
+    <ion-col>
+      <h5>{{constants.availableBike}}</h5>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-item lines="none" color="light">
+        <img slot="start" [src]="constants.assets.icon.availablePark"/>
+        <h1>{{station.bos}}</h1>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item lines="none" color="light">
+        <img slot="start" [src]="constants.assets.icon.availableBike"/>
+        <h1>{{station.dolu}}</h1>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-card>
